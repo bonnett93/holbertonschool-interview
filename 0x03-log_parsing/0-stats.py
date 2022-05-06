@@ -1,14 +1,10 @@
 #!/usr/bin/python3
-"""
-0. Log parsing: reads stdin line by line and computes metrics
-"""
+"""0. Log parsing: reads stdin line by line and computes metrics"""
 import sys
 
 
 def printstats(file_size, status_codes):
-    """
-    print stats about file_size and status_codes
-    """
+    """print stats about file_size and status_codes"""
     print("File size:", file_size)
     for code in status_codes:
         if status_dict[code] > 0:
