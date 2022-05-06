@@ -3,13 +3,11 @@
 0. Log parsing
 """
 import sys
-import signal
-import re
-from functools import partial
 from datetime import datetime
 
 
 def check_format(line_split):
+    """Check the correct format"""
     try:
         ip = line_split[0].split('.')
         if not all(map(str.isdigit, ip)):
@@ -31,6 +29,7 @@ def check_format(line_split):
 
 
 def printstats(file_size, status_codes):
+    """print stats"""
     print("File size:", file_size)
     for code in status_codes:
         if status_dict[code] > 0:
@@ -55,7 +54,6 @@ try:
         if x % 10 == 0:
             x = 0
             printstats(file_size, status_codes)
-
 
 except KeyboardInterrupt:
     printstats(file_size, status_codes)
