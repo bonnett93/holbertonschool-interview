@@ -3,7 +3,7 @@
 0. Log parsing: reads stdin line by line and computes metrics
 """
 import sys
-from datetime import datetime
+
 
 def printstats(file_size, status_codes):
     """
