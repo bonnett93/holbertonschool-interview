@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
-0. Log parsing
+0. Log parsing: reads stdin line by line and computes metrics
 """
 import sys
 from datetime import datetime
 
 
 def check_format(line_split):
-    """Check the correct format"""
+    """
+    Check the correct format of the line readed
+    """
     try:
         ip = line_split[0].split('.')
         if not all(map(str.isdigit, ip)):
@@ -29,7 +31,9 @@ def check_format(line_split):
 
 
 def printstats(file_size, status_codes):
-    """print stats"""
+    """
+    print stats about file_size and status_codes
+    """
     print("File size:", file_size)
     for code in status_codes:
         if status_dict[code] > 0:
