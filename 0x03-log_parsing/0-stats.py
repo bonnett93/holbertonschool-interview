@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Log parsing: reads stdin line by line and computes metrics """
+"""
+Log parsing: reads stdin line by line and computes metrics
+"""
 import sys
 import signal
 
@@ -13,6 +15,7 @@ def printstats(file_size, status_codes):
 
 
 def sigint_handler(signal, frame):
+    """Handle keyboard interrupt"""
     printstats(file_size, status_codes)
     sys.exit(0)
 
