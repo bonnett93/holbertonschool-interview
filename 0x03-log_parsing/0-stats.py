@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""0. Log parsing: reads stdin line by line and computes metrics"""
+""" Log parsing: reads stdin line by line and computes metrics """
 import sys
 import signal
 
