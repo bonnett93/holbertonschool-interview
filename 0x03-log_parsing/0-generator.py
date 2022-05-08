@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""0-generator.py"""
 import random
 import sys
 from time import sleep
