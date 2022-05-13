@@ -13,7 +13,7 @@ def validUTF8(data):
         if byte_type == 0:
             i += 1
             continue
-        valid_bytes = check_bytes(data[i+1: i + byte_type])
+        valid_bytes = check_bytes(data[i+1: i + byte_type], byte_type)
         if valid_bytes is False:
             return False
         i += byte_type
@@ -27,7 +27,7 @@ def char_type(byte):
     byte_type = 0
     b_byte = bin(byte)[2:]
     left_zeros = (8 - len(b_byte))*'0'
-    b_byte= left_zeros + b_byte
+    b_byte = left_zeros + b_byte
     for bit in b_byte:
         if bit == '0':
             break
@@ -35,8 +35,10 @@ def char_type(byte):
     return byte_type
 
 
-def check_bytes(data_chunk):
+def check_bytes(data_chunk, byte_type):
     """check if byte secuence is a valir UTF-8 patron"""
+    if len(data_chunk) < byte_type - 1:
+        return False
     for byte in data_chunk:
         if char_type(byte) != 1:
             return False
