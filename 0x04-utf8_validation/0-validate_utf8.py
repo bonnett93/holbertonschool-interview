@@ -6,6 +6,6 @@ def validUTF8(data):
     """determines if a given data set represents a valid UTF-8 encoding"""
     valid_UTF = True
     for byte in data:
-        if byte > 128:
+        if byte > 254:
             valid_UTF = False
     return valid_UTF
