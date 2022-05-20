@@ -33,10 +33,12 @@ def put_queen(N, col, positions):
             # print(f"{row} {col} {positions} diagonal block")
             continue
         positions[col] = row
-        if col != N-1:
-            put_queen(N, col+1, positions)
-        else:
+        if col == N-1:
             print_positions(N, positions)
+            continue
+        put_queen(N, col+1, positions)
+        if -1 in positions:
+            positions[col] = -1
 
 
 def print_positions(N, positions):
