@@ -11,7 +11,7 @@ def printstats(file_size, status_codes):
     print("File size:", file_size)
     for code in status_codes:
         if status_dict[code] > 0:
-            print(f"{code}: {status_dict[code]}")
+            print("{}: {}".format(code, status_dict[code]))
 
 
 def sigint_handler(signal, frame):
