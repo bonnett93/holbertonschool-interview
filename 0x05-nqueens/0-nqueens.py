@@ -62,14 +62,3 @@ for row in range(N):
     positions[0] = row
     put_queen(N, 1, positions)
     positions = [-1] * N
-
-#04 11 23 30 42
-#02 10 23 31 44
-#0 1 2 3 4
-#0 1 2 3 4
-#0 1 2 3 4
-#0 1 2 3 4
-#0 1 2 3 4
-#0 1 2 3 4
-#0 1 2 3 4
-#0 1 2 3 4
