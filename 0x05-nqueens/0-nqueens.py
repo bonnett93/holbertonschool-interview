@@ -35,6 +35,7 @@ def put_queen(N, col, positions):
         positions[col] = row
         if col == N-1:
             print_positions(N, positions)
+            positions[col] = -1
             continue
         put_queen(N, col+1, positions)
         if -1 in positions:
@@ -49,15 +50,26 @@ def print_positions(N, positions):
     print(final_array)
 
 
-def diagonal_shock(row, col, positions):
+def diagonal_shock(row, actual_col, positions):
     """Check if two queens are in te same diagonal"""
-    for i in range(col - 1, -1, -1):
-        if abs(positions[i] - row) == abs(col - i):
+    for col in range(actual_col, -1, -1):
+        if abs(positions[col] - row) == abs(actual_col - col):
             # print(row, positions[i], col, i)
             return True
     return False
 
-for i in range(N):
-    positions[0] = i
+for row in range(N):
+    positions[0] = row
     put_queen(N, 1, positions)
     positions = [-1] * N
+
+#04 11 23 30 42
+#02 10 23 31 44
+#0 1 2 3 4
+#0 1 2 3 4
+#0 1 2 3 4
+#0 1 2 3 4
+#0 1 2 3 4
+#0 1 2 3 4
+#0 1 2 3 4
+#0 1 2 3 4
