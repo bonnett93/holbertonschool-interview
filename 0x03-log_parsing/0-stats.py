@@ -42,3 +42,5 @@ for line in sys.stdin:
 
     except:
         continue
+
+printstats(file_size, status_codes)
